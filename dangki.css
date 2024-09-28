@@ -1,0 +1,540 @@
+/* Import */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+/* Refreash and overall fine-tuning */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.toastify {
+    position: fixed;
+    width: 350px;
+    height: 500px;
+    z-index: 100;
+    top: 8vh;
+    right: 3vh;
+    visibility: hidden;
+}
+
+.toast div {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    gap: 8px;
+    padding: 20px 20px;
+    background-color: #1c1d26;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 2px solid #252632;
+    box-shadow: 0 4px 10px #00000040;
+    animation: show_toast 5s ease forwards;
+}
+
+.toast p {
+    background-clip: text;
+    color: transparent;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+@keyframes show_toast {
+    0% {
+        transform: translateX(100%);
+    }
+
+    4% {
+        transform: translateX(-10%);
+    }
+
+    8% {
+        transform: translateX(0%);
+    }
+
+    10% {
+        transform: translateX(-10px);
+    }
+
+    60% {
+        transform: translateX(-10px);
+    }
+
+    90% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(200%);
+        visibility: hidden;
+    }
+}
+
+#o::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    animation: time_bar 4.5s linear forwards;
+    background-image: linear-gradient(to right, #ff652f 0%, #f28705 34%, #f29f05 67%, #f2b705 100%);
+}
+
+#w::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    animation: time_bar 4.5s linear forwards;
+    background-image: linear-gradient(to right, #379683 0%, #5cdb95 50%, #8ee4af 100%);
+}
+
+@keyframes time_bar {
+    100% {
+        width: 0%;
+    }
+}
+
+#w svg {
+    transform: rotate(90deg);
+    fill: #8ee4af;
+    fill: #5cdb95;
+    fill: #379683;
+}
+
+#w p {
+    background-image: linear-gradient(to right, #379683 0%, #5cdb95 50%, #8ee4af 100%);
+}
+
+
+#x svg {
+    fill: #ff4654;
+    fill: #ff4654b8;
+}
+
+#x p {
+    background-image: linear-gradient(to right, #ff4654b8 0%, #ff4656 50%, #ff4654b8 100%);
+}
+
+#z svg {
+    fill: #45a29e;
+    fill: #66fcf1;
+}
+
+#z p {
+    background-image: linear-gradient(to right, #45a29e 0%, #66fcf1 100%);
+}
+
+#o svg {
+    fill: #f2b705;
+    fill: #f29f05;
+    fill: #f28705;
+    fill: #ff652f;
+}
+
+#o p {
+    background-image: linear-gradient(to right, #ff652f 0%, #f28705 34%, #f29f05 67%, #f2b705 100%);
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    background-image: url(jetval.jpg);
+    background-size: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+.bg:before {
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    position: fixed;
+    max-height: 300px;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: " ";
+}
+
+.trangdangnhap {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.header {
+    padding: 60px 72px 20px;
+
+}
+
+.header svg {
+    fill: white;
+    font-size: 100px;
+}
+
+.dangnhap {
+    margin-left: 600px;
+    width: 30%;
+    height: 550px;
+    padding: 30px 48px;
+    background-color: white;
+}
+
+.dangnhap h2 {
+    text-align: center;
+    padding-top: 50px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+.nddn {
+    padding-top: 10px;
+}
+
+/* Input CSS */
+.inputdn {
+    position: relative;
+    position: relative;
+}
+
+.inputdn p {
+    font-family: 'Roboto', sans-serif;
+    color: #ff4654;
+    position: absolute;
+    font-size: 12px;
+}
+
+.form-input {
+    margin-top: 15px;
+    padding: 0px 20px;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.25s ease;
+    border: 1px solid #eee;
+}
+
+.form-input:focus {
+    border-color: #ff4654;
+}
+
+.form-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(0%);
+    left: 20.5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13.2px;
+    font-weight: 400;
+    user-select: none;
+    color: #999;
+    pointer-events: none;
+    transition: 0.4s ease;
+}
+
+.form-input:focus+.form-label {
+    display: inline-block;
+    top: 6px;
+    padding: 0 10px;
+    background-color: white;
+    color: #ff4654;
+    left: 8px;
+}
+
+.form-input:not(:placeholder-shown)+.form-label {
+    position: absolute;
+    top: 11%;
+    background-color: white;
+    padding: 0 25px;
+    left: 30px;
+    transition: 0.6s ease;
+}
+
+.form-input:focus+.lgin {
+    width: 72px;
+    height: 72px;
+    background-color: white;
+    border-radius: 25px;
+    border: 2px solid #eee;
+}
+
+.form-input:not(:placeholder-shown)+.lgin {
+    background-color: red;
+    fill: #ff4654;
+}
+
+/* Logo CSS */
+.socialLogo {
+    display: flex;
+}
+
+.sociallogo {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 32px;
+    margin: 30px 0px 20px 0px;
+}
+
+.logo button {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo .lg {
+    width: 16px;
+    height: 16px;
+}
+
+.l {
+    height: 16px;
+    width: 16px;
+}
+
+#logo1 {
+    background-color: #1877f2;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+#logo1:hover {
+    background: rgb(9, 102, 222);
+}
+
+#logo2 {
+    background-color: white;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+#logo2:hover {
+    background-color: whitesmoke;
+}
+
+#logo3 {
+    background-color: black;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+#logo3:hover {
+    background: rgb(20, 20, 20);
+}
+
+#logo4 {
+    background-color: rgb(16, 124, 16);
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+#logo4:hover {
+    background: rgb(7, 105, 7);
+}
+
+/* Rememberme CSS */
+.save {
+    display: flex;
+    gap: 5px;
+}
+
+.check {
+    height: 15px;
+}
+
+.check input {
+    width: 16px;
+    height: 16px;
+}
+
+.save p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 401;
+}
+
+/* Login CSS */
+.signup {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 70px;
+    width: 72px;
+    height: 72px;
+}
+
+.btsu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 25px;
+    border: 2px solid #eee;
+    cursor: not-allowed;
+}
+
+.btsu svg {
+    fill: #999;
+    width: 32px;
+    height: 32px;
+}
+
+.btd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ff1f30;
+    border-radius: 25px;
+    border: none;
+}
+
+.btd svg {
+    fill: black;
+    width: 32px;
+    height: 32px;
+    cursor: default;
+}
+
+/* Help CSS */
+.help {
+    margin-top: 25px;
+}
+
+.help div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.hp a {
+    font-size: 10px;
+    font-family: "Roboto", sans-serif;
+    color: black;
+}
+
+/* Thong tin CSS */
+.thongtin {
+    margin-top: 30px;
+    padding: 24px 72px 49px;
+}
+
+.thongtinchinh a {
+    text-decoration: none;
+    color: #e3d8d9;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.thongtinphu a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 8px;
+    color: white;
+    letter-spacing: 1px;
+    text-decoration: underline;
+    text-decoration-color: #ff4654;
+}
+
+.thongtinchinh {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.thongtinphu {
+    margin-top: 20px;
+    color: #aca3a4;
+    font-size: 8px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.8px;
+}
+
+.language {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    font-size: 12.64px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(173, 173, 173);
+    display: flex;
+    vertical-align: baseline;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 4.8px;
+    text-transform: uppercase;
+    backdrop-filter: blur(12px);
+}
+
+.language span {
+    font-family: "Roboto", sans-serif;
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.lang {
+    appearance: none;
+    padding: 0.7em 1em;
+    border: none;
+    outline: none;
+    background-color: rgba(235, 235, 235, 0.2);
+    color: transparent;
+    opacity: 1;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.lang:hover {
+    background-color: rgba(235, 235, 235, 0.3);
+}
+
+.la {
+    position: absolute;
+    display: flex;
+    gap: 2x;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
