@@ -98,7 +98,7 @@ function checkacc() {
 
     // Get input values
     // Sign in using Firebase Authentication
-    signInWithEmailAndPassword(auth, userName, userPass)
+    signInWithEmailAndPassword(auth, userName.value, userPass.value)
         .then((userCredential) => {
             let html = ``;
             html += `
