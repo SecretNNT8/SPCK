@@ -33,7 +33,7 @@ function checkLogin() {
   } else {
     document.querySelector(".playa").innerHTML = `
       <div class="play">
-          <a href="http://127.0.0.1:5500/dangnhap.html">CHƠI NGAY</a>
+          <a href="./dangnhap.html">CHƠI NGAY</a>
       </div>
   `;
   }
@@ -41,5 +41,5 @@ function checkLogin() {
 checkLogin();
 const button = document.querySelector('.chienngay');
 button.addEventListener('click', function () {
-  location.href = "http://127.0.0.1:5500/chodem.html";
+  location.href = "./chodem.html";
 })

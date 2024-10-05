@@ -109,7 +109,7 @@ function updateQuantity() {
 updateQuantity();
 const lheader = document.querySelector('.left-header');
 lheader.addEventListener('click', function () {
-    location.href = "http://127.0.0.1:5500/index.html";
+    location.href = "./index.html";
 })
 function checkLogin() {
     if (localStorage.getItem("user") && localStorage.getItem("pass")) {
@@ -139,6 +139,6 @@ function checkLogin() {
     }
 }
 function login() {
-    location.href = "http://127.0.0.1:5500/dangnhap.html";
+    location.href = "./dangnhap.html";
 }
 checkLogin();

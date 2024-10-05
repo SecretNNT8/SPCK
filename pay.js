@@ -179,14 +179,14 @@ function checkout() {
     if (localStorage.getItem("user")) {
         alert("Thanh toán thành công");
         localStorage.removeItem("cart");
-        location.href = "http://127.0.0.1:5500/chodem.html";
+        location.href = "./chodem.html";
     } else {
         alert("Mời bạn đăng nhập trước khi thanh toán");
-        location.href = "http://127.0.0.1:5500/dangnhap.html";
+        location.href = "./dangnhap.html";
     }
 }
 function store() {
-    location.href = "http://127.0.0.1:5500/chodem.html";
+    location.href = "./chodem.html";
 }
 function quantity() {
     if (localStorage.getItem("cart")) {
@@ -199,7 +199,7 @@ function quantity() {
 }
 const returned = document.querySelector(".return")
 returned.addEventListener("click", function () {
-    location.href = "http://127.0.0.1:5500/chodem.html";
+    location.href = "./chodem.html";
 })
 const account = {
     user: "thanh??",
@@ -278,6 +278,6 @@ function checkLogin() {
     }
 }
 function login() {
-    location.href = "http://127.0.0.1:5500/dangnhap.html";
+    location.href = "./dangnhap.html";
 }
 checkLogin();
