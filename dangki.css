@@ -16,6 +16,8 @@ a {
     text-decoration: none;
 }
 
+/* Toastify */
+
 .toastify {
     position: fixed;
     width: 350px;
@@ -41,6 +43,7 @@ a {
     border: 2px solid #252632;
     box-shadow: 0 4px 10px #00000040;
     animation: show_toast 5s ease forwards;
+    transition-delay: 0s !important;
 }
 
 .toast p {
@@ -170,6 +173,8 @@ a {
     bottom: 0;
     content: " ";
 }
+
+/* Main */
 
 .trangdangnhap {
     width: 100%;

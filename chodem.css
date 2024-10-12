@@ -237,7 +237,11 @@ footer {
     font-size: 22px;
     font-weight: 500;
     font-family: 'Ariel', sans-serif;
-    color: white;
+    background-position: -150px 20px;
+    background-size: 600px 800px;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.555))
 }
 
 .buy {
@@ -291,7 +295,7 @@ footer {
 }
 
 .gsf {
-    overflow-x: auto;
+    overflow-x: hidden;
     height: 100%;
     width: 90%;
     margin: 0 auto;

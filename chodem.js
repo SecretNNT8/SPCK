@@ -23,7 +23,7 @@ for (let i = 0; i < frenzydata.length; i++) {
         </a>
     </div>
     <div class="ns">
-        <p>${frenzydata[i].name}</p>
+        <p style="background-image:url(./frenzyskin/${frenzydata[i].image})">${frenzydata[i].name}</p>
     </div>
     <div class="buy">
         <div class="bd">Mua ngay</div>
@@ -142,3 +142,9 @@ function login() {
     location.href = "./dangnhap.html";
 }
 checkLogin();
+const scrollContainer = document.querySelector('.gsf');
+
+scrollContainer.addEventListener('wheel', (evt) => {
+    evt.preventDefault(); // Ngăn chặn cuộn mặc định
+    scrollContainer.scrollLeft += evt.deltaY * 2; // Điều chỉnh tốc độ cuộn ngang
+});

@@ -53,14 +53,14 @@ const frenzydata = [
         name: "RGX 11Z Pro",
         price: 2175,
         category: 'SIDEARMS',
-        image: "rgx 11z pro.jpg",
+        image: "rgx-11z-pro.jpg",
     },
     {
         id: 9,
         name: "Nunca Olvidados",
         price: 1275,
         category: 'SIDEARMS',
-        image: "nunca olvidados.jpg",
+        image: "nunca-olvidados.jpg",
     },
     {
         id: 10,
@@ -81,7 +81,7 @@ const frenzydata = [
         name: "Team Ace",
         price: 1275,
         category: 'SIDEARMS',
-        image: "team ace.jpg",
+        image: "team-ace.jpg",
     },
     {
         id: 13,
@@ -109,6 +109,6 @@ const frenzydata = [
         name: "Ion 2.0",
         price: 1775,
         category: 'SIDEARMS',
-        image: "ion.jpg",
+        image: "ion-2.0.jpg",
     },
 ]
