@@ -1,42 +1,58 @@
 
-const productList = document.querySelector(".gs");
+const productList = document.querySelector(".content");
+const gunSkinList = document.querySelector(".gs");
 let html = "";
+html += `
+    <img src="./frenzyskin/frenzy.jpg" class="frenzy">
+    <div class="gsf">
+            <div class="gs">
+            </div>
+        </div>
+    `
+productList.innerHTML = html
+html += `
+    <div class="left">
+        <div class="bl"></div>
+    </div>
+    <div class="right">
+        <div class="br"></div>
+    </div>`;
 for (let i = 0; i < frenzydata.length; i++) {
     html += `
-    <div class='gsjs'>
-        <div class="gss">
-        <div class="vp">
-            <div>
-                <img width="18" height="18" src="vp.jpg">
+        <div class='gsjs'>
+            <div class="gss">
+            <div class="vp">
+                <div>
+                    <img width="18" height="18" src="vp.jpg">
+                </div>
+                <div>
+                    <p>${frenzydata[i].price}</p>
+                </div>
             </div>
-            <div>
-                <p>${frenzydata[i].price}</p>
+            <a>
+                <span>
+                    <img width="300" height="300"
+                        src="./frenzyskin/${frenzydata[i].image}"
+                        alt="${frenzydata[i].name}" title="${frenzydata[i].name}"
+                        >
+                </span>
+            </a>
+        </div>
+        <div class="ns">
+            <p style="background-image:url(./frenzyskin/${frenzydata[i].image})">${frenzydata[i].name}</p>
+        </div>
+        <div class="buy">
+            <div class="bd">Mua ngay</div>
+            <div class="order" onclick="addCart(${frenzydata[i].id})" id="${frenzydata[i].id}">
+                <div class="scart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
             </div>
         </div>
-        <a>
-            <span>
-                <img width="300" height="300"
-                    src="./frenzyskin/${frenzydata[i].image}"
-                    alt="${frenzydata[i].name}" title="${frenzydata[i].name}"
-                    >
-            </span>
-        </a>
-    </div>
-    <div class="ns">
-        <p style="background-image:url(./frenzyskin/${frenzydata[i].image})">${frenzydata[i].name}</p>
-    </div>
-    <div class="buy">
-        <div class="bd">Mua ngay</div>
-        <div class="order" onclick="addCart(${frenzydata[i].id})" id="${frenzydata[i].id}">
-            <div class="scart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
         </div>
-    </div>
-    </div>
- `;
+     `;
 }
-productList.innerHTML = html
+gunSkinList.innerHTML = html;
 const order = document.getElementsByClassName("order");
 let idorder = order.id;
 function addCart(id) {
@@ -146,5 +162,5 @@ const scrollContainer = document.querySelector('.gsf');
 
 scrollContainer.addEventListener('wheel', (evt) => {
     evt.preventDefault(); // Ngăn chặn cuộn mặc định
-    scrollContainer.scrollLeft += evt.deltaY * 2; // Điều chỉnh tốc độ cuộn ngang
+    scrollContainer.scrollLeft += evt.deltaY * 0.5; // Điều chỉnh tốc độ cuộn ngang
 });
