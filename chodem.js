@@ -1,37 +1,38 @@
-
-const productList = document.querySelector(".content");
-const gunSkinList = document.querySelector(".gs");
-let html = "";
-html += `
+function renderGunSkinPage() {
+    const productList = document.querySelector(".content");
+    let html = "";
+    html += `
     <img src="./frenzyskin/frenzy.jpg" class="frenzy">
     <div class="gsf">
-            <div class="gs">
-            </div>
-        </div>
+    <div class="gs">
+    </div>
+    </div>
     `
-productList.innerHTML = html
-html += `
+    productList.innerHTML = html;
+    const gunSkinList = document.querySelector(".gs");
+    let ht = "";
+    ht += `
     <div class="left">
-        <div class="bl"></div>
+    <div class="bl"></div>
     </div>
     <div class="right">
-        <div class="br"></div>
+    <div class="br"></div>
     </div>`;
-for (let i = 0; i < frenzydata.length; i++) {
-    html += `
+    for (let i = 0; i < frenzydata.length; i++) {
+        ht += `
         <div class='gsjs'>
             <div class="gss">
             <div class="vp">
                 <div>
-                    <img width="18" height="18" src="vp.jpg">
+                <img width="18" height="18" src="vp.jpg">
                 </div>
                 <div>
-                    <p>${frenzydata[i].price}</p>
+                <p>${frenzydata[i].price}</p>
                 </div>
-            </div>
-            <a>
+                </div>
+                <a>
                 <span>
-                    <img width="300" height="300"
+                <img width="300" height="300"
                         src="./frenzyskin/${frenzydata[i].image}"
                         alt="${frenzydata[i].name}" title="${frenzydata[i].name}"
                         >
@@ -39,20 +40,22 @@ for (let i = 0; i < frenzydata.length; i++) {
             </a>
         </div>
         <div class="ns">
-            <p style="background-image:url(./frenzyskin/${frenzydata[i].image})">${frenzydata[i].name}</p>
+        <p style="background-image:url(./frenzyskin/${frenzydata[i].image})">${frenzydata[i].name}</p>
         </div>
         <div class="buy">
-            <div class="bd">Mua ngay</div>
+        <div class="bd">Mua ngay</div>
             <div class="order" onclick="addCart(${frenzydata[i].id})" id="${frenzydata[i].id}">
-                <div class="scart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
+            <div class="scart">
+            <i class="fa-solid fa-cart-shopping"></i>
             </div>
-        </div>
-        </div>
-     `;
+            </div>
+            </div>
+            </div>
+            `;
+    }
+    gunSkinList.innerHTML = ht;
 }
-gunSkinList.innerHTML = html;
+renderGunSkinPage();
 const order = document.getElementsByClassName("order");
 let idorder = order.id;
 function addCart(id) {
@@ -164,3 +167,60 @@ scrollContainer.addEventListener('wheel', (evt) => {
     evt.preventDefault(); // Ngăn chặn cuộn mặc định
     scrollContainer.scrollLeft += evt.deltaY * 0.5; // Điều chỉnh tốc độ cuộn ngang
 });
+// Circular menu
+console.clear();
+// no resize logic integrated !
+
+var circleSVG = document.querySelector("#svg");
+gsap.set('#circleWrap, #svg', { xPercent: -50, yPercent: -50 })
+
+MotionPathPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
+
+var circlePath = document.querySelector("#circle");
+const items = document.querySelectorAll('.item');
+
+
+gsap.set(items, {
+    motionPath: { // see 001
+        path: circlePath,
+        align: circlePath,
+        alignOrigin: [0.5, 0.5],
+        autoRotate: -90,
+        end: i => i / items.length
+    }
+});
+
+var action = gsap.timeline({ paused: true })
+    .to('#circleWrap', { rotation: -360, transformOrigin: 'center', duration: 1, ease: 'none' })
+
+// The start and end positions in terms of the page scroll
+
+const startY = innerHeight;
+const finishDistance = innerHeight * 4;
+
+// Listen to the scroll event
+var scroll = document.getElementById("scroll");
+scroll.addEventListener("scroll", function () {
+    // Prevent the update from happening too often (throttle the scroll event)
+    if (!requestId) {
+        requestId = requestAnimationFrame(update);
+    }
+});
+
+update();
+
+function update() {
+
+    // Update our animation
+    var y = scroll.scrollTop;
+    ratio = y / (startY * 5);
+    if (ratio % 1 === 0) {
+        $('#scroll').scrollTop(0); // not plain
+    }
+
+    action.progress(ratio);
+
+    // Let the scroll event fire again
+    requestId = null;
+
+}

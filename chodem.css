@@ -165,6 +165,52 @@ header {
     overflow: hidden;
 }
 
+/* Circular menu */
+.gc {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 80.5vh;
+    width: 20%;
+    background-color: antiquewhite;
+}
+
+#circleWrap {
+    width: 20%;
+    height: 80.5vh;
+}
+
+#scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+}
+
+#sm {
+    position: absolute;
+    width: 100%;
+    height: 600vh;
+}
+
+.item {
+    /* position: relative; */
+    width: 250px;
+    height: 80px;
+    z-index: 100;
+    font-size: 30px;
+    /* line-height: 83px; */
+    font-family: sans-serif;
+    color: #484848;
+}
+
+#svg {
+    position: absolute;
+    /* overflow: visible; */
+}
+
 .frenzy {
     position: fixed;
     transform: translate(-75%, 60%) scale(150%) rotate(20deg);
@@ -172,7 +218,6 @@ header {
     bottom: 50%;
     left: 50%;
     position: center;
-    /* z-index: -1; */
 }
 
 .gts {

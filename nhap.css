@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    background-color: grey;
+    height: 700vh;
+}
+
+#circleWrap {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+
+}
+
+svg {
+    position: absolute;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+
+    overflow: visible;
+}
+
+.item {
+    width: 250px;
+    height: 80px;
+    /* background-color: green; */
+    font-size: calc(30px + 10vh);
+    line-height: 83px;
+    font-family: sans-serif;
+    color: #484848;
+}
+
+#circle {
+    fill: #888887;
+}
